@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{347C26EF0DF9B805}Prefabs/Weapons/Warheads/Warhead_122mm_9M28F.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

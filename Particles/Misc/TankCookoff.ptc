@@ -1,0 +1,83 @@
+EffectDef {
+ Emitters {
+  EmitterDef Emitter_01 {
+   ShapeType Ellipse
+   ShapeSize 3 3 0
+   ConeAngle 360 30 20
+   MaxNum 100
+   BirthRate 100
+   Material "{8F92E3BF58DF61FD}Particles/_Materials/Fire/FireBurn_anim_01.emat"
+   Prefab "{29FBEC1991810EEF}system/wbdata/ParticleEditor/defaultPrefab.et"
+   SizeMultiplier 4
+   SizeRND 5
+   RotRND 30
+   RandomRotDir 1
+   RandomAngle 1
+   Velocity 12
+   VelocityRND 4
+   AirResistance 0.4
+   AirResistanceRND 0.2
+   WindInfluence 0.8
+   GravityMultiply -8
+   AnimOnce 1
+   AnimFPS 60
+   Lifetime 0.5
+   Alpha {
+    0 1 0.647 0.976 0.919 0.633 1 0
+   }
+   Size {
+    0 0.373 0.051 1
+   }
+  }
+  EmitterDef Sparks {
+   ShapeType Box
+   ShapeSize 2 2 0
+   ConeAngle 360 120 120
+   MaxNum 100
+   BirthRate 22
+   BirthRateRND 4
+   Material "{2DF4058A4066E031}Particles/_Materials/Fire/Base_Sparks_07.emat"
+   Prefab "{29FBEC1991810EEF}system/wbdata/ParticleEditor/defaultPrefab.et"
+   StretchMultiplier 1.02
+   SizeMultiplier 0.1
+   Velocity 20
+   VelocityRND 20
+   AirResistance 0.4
+   AirResistanceRND 0.2
+   WindInfluence 0.5
+   GravityMultiply 2
+   GravityMultiplyRND 1.2
+   Restitution 0
+   Spring 0.01
+   Lifetime 1
+   Size {
+    0 1 0.689 0.88 1 0
+   }
+  }
+  EmitterDef Smoke2 {
+   MaxNum 100
+   BirthRate 20
+   Material "{61247CAB58EF0D6D}Particles/_Materials/Gas/Smoke_Explosion_02.emat"
+   Prefab "{29FBEC1991810EEF}system/wbdata/ParticleEditor/defaultPrefab.et"
+   StretchMultiplier 1
+   SizeMultiplier 16
+   SizeRND 6
+   RotMultiplier 0
+   RotRND 40
+   RandomAngle 1
+   Velocity 32
+   VelocityRND 4
+   AirResistance 0.6
+   AirResistanceRND 0.2
+   WindInfluence 1
+   AnimOnce 1
+   AnimFPS 24
+   Alpha {
+    0 0 0.207 0.62 0.35 1 0.545 1 0.945 0.03
+   }
+   Size {
+    0 0.367 0.253 1 0.651 1
+   }
+  }
+ }
+}

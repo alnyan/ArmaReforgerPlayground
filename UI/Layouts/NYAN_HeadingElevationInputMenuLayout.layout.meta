@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{8F8FF80BD7E05CE1}Scripts/Game/UI/Layouts/Modded/AzimuthElevationInputMenuLayout.layout"
+ Configurations {
+  LayoutResourceClass PC {
+  }
+  LayoutResourceClass XBOX_ONE : PC {
+  }
+  LayoutResourceClass XBOX_SERIES : PC {
+  }
+  LayoutResourceClass PS4 : PC {
+  }
+  LayoutResourceClass HEADLESS : PC {
+  }
+ }
+}

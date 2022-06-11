@@ -1,0 +1,90 @@
+GenericEntity {
+ ID "5995776C684CF65C"
+ components {
+  SignalsManagerComponent "{599346C2E9690509}" {
+  }
+  MeshObject "{599346D79E449D07}" {
+   Object "{08C82297260D8E74}Assets/Vehicles/Artillery/BM21/BM21_Turret.xob"
+  }
+  NYAN_LaunchPodController "{599346CDCF2DF284}" {
+   m_directionAzimuth 0
+   m_directionElevation 0
+  }
+  RigidBody "{599346D79E449D42}" {
+   LayerPreset "Interaction"
+   ResponseIndex "Normal"
+   ModelGeometry 1
+   Static 0
+  }
+  SlotManagerComponent "{599346D79E449D7C}" {
+   Slots {
+    EntitySlotInfo Rocket0 {
+     PivotID "SOCKET_Tube0"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket1 {
+     PivotID "SOCKET_Tube1"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket2 {
+     PivotID "SOCKET_Tube2"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket3 {
+     PivotID "SOCKET_Tube3"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     ActivatePhysicsOnDetaching 1
+    }
+   }
+  }
+  ProcAnimComponent "{599346C2EC87E9F3}" {
+   Parameters {
+    ProcAnimParams "{599346C2EDBA79F6}" {
+     ResourceName "{F41BA441BB78161D}anims/proc/turret.pap"
+     BoneNames {
+      "w_root" "v_tubeMount"
+     }
+     AlwaysSimulateOwner 1
+    }
+   }
+  }
+  ActionsManagerComponent "{599346D79E449DFF}" {
+   ActionContexts {
+    UserActionContext "{599346D79E449DE5}" {
+     ContextName "default"
+     Position PointInfo "{599346D79E449DE7}" {
+     }
+     Radius 10
+    }
+   }
+   additionalActions {
+    NYAN_MissileLaunchAction "{599346D79E449DFE}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{599346D79E449DF0}" {
+     }
+    }
+    NYAN_InputHeadingElevationAction "{5995776D364E372B}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{5995776CCE21D001}" {
+      Name "Input targeting data"
+     }
+    }
+   }
+  }
+  RplComponent "{599346D79E449DFB}" {
+  }
+ }
+ coords 0 0 0
+ Flags 1027
+}

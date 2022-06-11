@@ -1,0 +1,88 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ {
+  PanelWidgetClass "{5995630995ACFB26}" {
+   Name "MainPanel"
+   Slot FrameWidgetSlot "{5995630995ACFB39}" {
+    Anchor 0.5 0.5 0.5 0.5
+    PositionX -200
+    OffsetLeft -200
+    PositionY -100
+    OffsetTop -100
+    SizeX 400
+    OffsetRight -200
+    SizeY 200
+    OffsetBottom -100
+   }
+   {
+    VerticalLayoutWidgetClass "{59956309BC4729F7}" {
+     Name "MainLayout"
+     Slot FrameWidgetSlot "{59956309BC472816}" {
+      Anchor 0 0 1 1
+      PositionX 144.891
+      OffsetLeft 8
+      PositionY 96.91
+      OffsetTop 8
+      SizeX -300
+      OffsetRight 8
+      SizeY -170
+      OffsetBottom 8
+     }
+     "Fill Origin" Center
+     {
+      TextWidgetClass "{59956309ABDE68BF}" {
+       Name "HeadingLabel"
+       Slot LayoutSlot "{59956309ABDE68DD}" {
+        Padding 12 0 0 0
+       }
+       Text "Heading"
+      }
+      EditBoxWidgetClass "{599563083CEA970D}" {
+       Name "HeadingEditBox"
+       Slot LayoutSlot "{599563083CEA972C}" {
+        Padding 16 8 16 0
+       }
+       text "0"
+       "Horizontal alignment" Center
+      }
+      TextWidgetClass "{59956308C8313DB1}" {
+       Name "ElevationLabel"
+       Slot LayoutSlot "{59956308C8313DD3}" {
+        Padding 12 8 0 0
+       }
+       Text "Elevation"
+      }
+      EditBoxWidgetClass "{5995630839799D11}" {
+       Name "ElevationEditBox"
+       Slot LayoutSlot "{5995630839799D33}" {
+        Padding 16 8 16 0
+       }
+       text "0"
+       "Horizontal alignment" Center
+      }
+      ButtonWidgetClass "{59956308F8A498C0}" {
+       Name "ApplyButton"
+       Slot LayoutSlot "{59956308F8A498E0}" {
+        Padding 12 8 12 0
+       }
+       Color 0.502 0 0 1
+       components {
+        SCR_ButtonTextComponent "{5995776FF5EE9DAA}" {
+         m_sText "Apply"
+        }
+       }
+       {
+        TextWidgetClass "{59957768938AB7DA}" {
+         Name "ApplyButtonText"
+         Slot ButtonWidgetSlot "{59957768938AB7FD}" {
+         }
+         Text "Apply"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

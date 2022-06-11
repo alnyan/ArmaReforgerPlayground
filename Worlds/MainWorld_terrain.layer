@@ -1,0 +1,261 @@
+GenericTerrainEntity Terrain {
+ LayerPreset "Terrain"
+}
+SplineShapeEntity MainRoad {
+ coords 3.279 1.001 130.06
+ Points {
+  ShapePoint "{598AF186C446E693}" {
+   Position -6.114 -1.001 0
+  }
+  ShapePoint "{598AF186C446E0A2}" {
+   Position 69.699 -0.001 -2.208
+  }
+  ShapePoint "{598AF1869C85C571}" {
+   Position 255.914 -1.001 -6.262
+  }
+ }
+ {
+  RoadGeneratorEntity : "{5E336AEB0923963F}PrefabLibrary/Generators/Roads/Asphalt/RG_Road_Asphalt_E_01_DashedLine.et" {
+   coords 0 0 0
+   {
+    RoadEntity {
+     ID "556C6556FAB8EA7A"
+     SplinePoints {
+      ShapePoint "{556C6556BF2A9CBB}" {
+       Position -6.114 -1.001 0
+      }
+      ShapePoint "{556C6556BF2A9DE7}" {
+       Position 69.699 -0.001 -2.208
+      }
+      ShapePoint "{598AF186BD9D2E33}" {
+       Position 255.914 -1.001 -6.262
+      }
+     }
+     IsClosedSpline 0
+     Width 12
+    }
+   }
+  }
+ }
+}
+Tree : "{1C4EEFC81C19E4C6}Prefabs/Vegetation/Tree/t_betula_pendula_0.et" {
+ coords 103.789 0.001 104.791
+}
+Projectile : "{262F0D09C4130826}Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et" {
+ coords 37.012 0.181 112.729
+}
+$grp Tree : "{2B532EC12F7FB1DE}Prefabs/Vegetation/Tree/t_betula_pendula_3s.et" {
+ {
+  coords 200.015 0.001 113.34
+ }
+ {
+  coords 21.29 0.001 119.354
+ }
+ {
+  coords 48.599 0.041 117.972
+  angleY -25.065
+ }
+ {
+  coords 104.496 0.001 103.856
+ }
+ {
+  coords 170.909 0.001 103.975
+ }
+}
+Tree : "{2E810552D5E6CF78}Prefabs/Vegetation/Tree/t_betula_pendula_2sw.et" {
+ coords 161.618 0.001 102.905
+}
+$grp Tree : "{34326A41A24A1B16}Prefabs/Vegetation/Tree/t_alnus_glutinosa_2f.et" {
+ {
+  coords 125.073 0.001 114.993
+ }
+ {
+  coords 217.41 0.001 114.049
+ }
+ {
+  coords 8.616 0.001 118.66
+ }
+ {
+  coords 32.43 0.001 116.715
+ }
+ {
+  coords 149.478 0.001 104.891
+ }
+}
+GenericEntity : "{434AFBBE90F2B078}Prefabs/Sounds/Environment/AmbientSounds_Everon.et" {
+ coords 51.774 1.001 122.971
+}
+$grp SCR_DestructibleBuildingEntity : "{4453575E36B89EBA}Prefabs/Structures/Walls/Concrete/ConcreteRetainingWall_01_4m_30.et" {
+ {
+  coords 11.87 3.72 77.235
+  angleY 0
+ }
+ {
+  coords 16.351 3.739 77.569
+  angleX -31.803
+  angleY 0
+ }
+ {
+  coords 20.351 3.616 82.519
+  angleY 0
+ }
+}
+Vehicle Ural4320_BM1 : "{5352EC89ADB42AB1}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_BM21.et" {
+ coords 27.433 2.001 25.819
+}
+$grp Tree : "{5C594649DBDD5EAE}Prefabs/Vegetation/Tree/t_betula_pendula_2s.et" {
+ {
+  coords 153.977 0.001 103.042
+ }
+ {
+  coords 144.94 0.001 109.113
+  angleY -138.248
+ }
+ {
+  coords 85.384 0.001 105.384
+ }
+}
+$grp Tree : "{616D6371AEB1D799}Prefabs/Vegetation/Tree/t_betula_pendula_2t.et" {
+ {
+  coords 107.34 0.001 114.849
+ }
+ {
+  coords 214.87 0.001 109.686
+ }
+ {
+  coords 7.217 0.001 112.758
+ }
+}
+$grp Tree : "{63DC62906A5917F3}Prefabs/Vegetation/Tree/t_populus_nigra_3s.et" {
+ {
+  coords 2.768 0.001 116.167
+ }
+ {
+  coords 28.889 0.001 111.574
+ }
+ {
+  coords 88.877 0.001 114.495
+ }
+ {
+  coords 147.033 0.001 117.915
+ }
+ {
+  coords 179.994 0.001 113.706
+ }
+ {
+  coords 209.073 0.001 114.997
+ }
+ {
+  coords 238.664 0.001 113.066
+ }
+ {
+  coords 221.737 0.001 111.833
+ }
+ {
+  coords 53.925 0.001 118.399
+ }
+ {
+  coords 55.011 0.001 110.029
+ }
+ {
+  coords 73.036 0.001 114.29
+ }
+ {
+  coords 122.411 0.001 115.517
+ }
+ {
+  coords 99.809 0.001 102.941
+ }
+ {
+  coords 134.876 0.001 104.003
+ }
+ {
+  coords 189.037 0.001 106.334
+ }
+ {
+  coords 222.966 0.001 106.048
+ }
+}
+Tree : "{70692C116A6B4177}Prefabs/Vegetation/Tree/t_betula_pendula_1sw.et" {
+ coords 25.253 0.001 118.346
+}
+$grp Tree : "{87BE91E8E84DA493}Prefabs/Vegetation/Tree/t_alnus_glutinosa_2s.et" {
+ {
+  coords 100.347 0.001 114.486
+ }
+ {
+  coords 114.311 0.001 113.972
+ }
+ {
+  coords 135.513 -0.888 116.556
+ }
+ {
+  coords 190.084 0.001 111.138
+ }
+ {
+  coords 230.606 0.001 113.311
+ }
+ {
+  coords 64.158 0.001 114.686
+ }
+ {
+  coords 14.257 0.001 114.716
+ }
+ {
+  coords 127.291 0.001 107.13
+ }
+ {
+  coords 68.098 0.001 105.379
+ }
+}
+$grp Tree : "{98DFD56865780E5B}Prefabs/Vegetation/Tree/t_betula_pendula_3f.et" {
+ {
+  coords 171.659 0.001 115.086
+ }
+ {
+  coords 25.26 0.001 109.187
+ }
+ {
+  coords 75.764 0.001 106.302
+ }
+}
+$grp Tree : "{B78F72C338993EA1}Prefabs/Vegetation/Tree/t_betula_pendula_1f.et" {
+ {
+  coords 37.013 -0.031 116.162
+ }
+ {
+  coords 79.672 0.001 107.887
+ }
+}
+$grp Tree : "{C547FFD0C63A6F3E}Prefabs/Vegetation/Tree/t_betula_pendula_1s.et" {
+ {
+  coords 21.681 0.001 113.496
+ }
+ {
+  coords 119.038 0.001 106.676
+ }
+ {
+  coords 141.707 0.001 107.2
+ }
+}
+Tree : "{EFD5BDE091DAE12B}Prefabs/Vegetation/Tree/t_betula_pendula_2f.et" {
+ coords 80.032 -0.577 113.929
+}
+$grp Tree : "{F0B4F9601CEF4BE3}Prefabs/Vegetation/Tree/t_alnus_glutinosa_3s.et" {
+ {
+  coords 157.412 0.001 115.944
+ }
+ {
+  coords 41.99 0.001 112.377
+ }
+ {
+  coords 91.945 0.001 106.994
+ }
+}
+Tree : "{F89B942712FD22D6}Prefabs/Vegetation/Tree/t_carpinus_betulus_2s.et" {
+ coords 56.623 0.001 104.4
+}
+RoadGeneratorEntity : "{FBF452B7DEBBC974}Prefabs/WEGenerators/Roads/Asphalt/RG_Road_Asphalt_E_03.et" {
+ coords 98.329 0.001 126.837
+ scale 10
+}

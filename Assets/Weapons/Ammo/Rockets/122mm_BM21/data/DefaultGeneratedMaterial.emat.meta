@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{4F4A4E7F2D1C31E8}Assets/Weapons/Ammo/Rockets/122mm_BM21/data/DefaultGeneratedMaterial.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}
