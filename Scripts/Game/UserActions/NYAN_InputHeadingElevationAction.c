@@ -9,6 +9,6 @@ class NYAN_InputHeadingElevationAction : ScriptedUserAction
 			return;
 		}
 		
-		headingElevationMenu.launcherPodEntity = pOwnerEntity;
+		headingElevationMenu.SetLauncherEntity(pOwnerEntity);
 	}
 }

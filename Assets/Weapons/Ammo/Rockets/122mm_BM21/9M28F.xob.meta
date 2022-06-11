@@ -15,7 +15,7 @@ MetaFileClass {
      SurfaceProperties {
       "{F12BD66D5E2B4906}Common/Materials/Game/Core/metal_base.gamemat"
      }
-     Mass 0
+     Mass 120
      Margin 0
     }
    }

@@ -82,6 +82,20 @@ $grp Tree : "{34326A41A24A1B16}Prefabs/Vegetation/Tree/t_alnus_glutinosa_2f.et" 
   coords 149.478 0.001 104.891
  }
 }
+GenericEntity : "{37AB72E3F5D41EAB}Prefabs/Vehicles/Artillery/BM21_Turret.et" {
+ components {
+  NYAN_LaunchPodController "{599346CDCF2DF284}" {
+   m_headingTraverseSpeed 7
+   m_elevationTraverseSpeed 5
+   m_minHeading -102
+   m_maxHeading 70
+   m_minElevation 0
+   m_maxElevation 55
+  }
+ }
+ coords 21.702 2.957 25.512
+ angleY -5.022
+}
 GenericEntity : "{434AFBBE90F2B078}Prefabs/Sounds/Environment/AmbientSounds_Everon.et" {
  coords 51.774 1.001 122.971
 }
@@ -99,9 +113,6 @@ $grp SCR_DestructibleBuildingEntity : "{4453575E36B89EBA}Prefabs/Structures/Wall
   coords 20.351 3.616 82.519
   angleY 0
  }
-}
-Vehicle Ural4320_BM1 : "{5352EC89ADB42AB1}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_BM21.et" {
- coords 27.433 2.001 25.819
 }
 $grp Tree : "{5C594649DBDD5EAE}Prefabs/Vegetation/Tree/t_betula_pendula_2s.et" {
  {

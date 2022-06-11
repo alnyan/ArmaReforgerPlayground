@@ -4,7 +4,7 @@ GenericEntity : "{3619812B192CCAE9}Prefabs/Props/Core/Wreck_Base.et" {
   CollisionTriggerComponent "{598968CB67662471}" {
    PROJECTILE_EFFECTS {
     ExplosionEffect "{598968CB62373A5B}" {
-     EffectPrefab "{347C26EF0DF9B805}Prefabs/Weapons/Warheads/Warhead_122mm_9M28F.et"
+     EffectPrefab "{347C26EF0DF9B805}Prefabs/Weapons/Warheads/Warhead_122mm_BM21_9M28F.et"
      ParticleEffect "{F70E177B46DC4D9E}Particles/Weapon/Explosion_9M22F.ptc"
      SoundEvent "SOUND_EXPLOSION"
     }
@@ -29,6 +29,7 @@ GenericEntity : "{3619812B192CCAE9}Prefabs/Props/Core/Wreck_Base.et" {
   }
   RigidBody "{5872F0EB7DFB5A9D}" {
    LayerPreset "Projectile"
+   Active Active
    Mass 120
    ResponseIndex "HugeDestructible"
    Static 0

@@ -1,6 +1,20 @@
 class NYAN_LaunchPodControllerClass: ScriptComponentClass {};
 
 class NYAN_LaunchPodController: ScriptComponent {
+	[Attribute("10", UIWidgets.Slider, "Heading traverse speed (deg/s)", "0 180 1")]
+	private float m_headingTraverseSpeed;
+	[Attribute("10", UIWidgets.Slider, "Elevation traverse speed (deg/s)", "0 180 1")]
+	private float m_elevationTraverseSpeed;
+	
+	[Attribute("-180", UIWidgets.Slider, "Minimum heading", "-180 0 0.1")]
+	private float m_minHeading;
+	[Attribute("180", UIWidgets.Slider, "Maximum heading", "0 180 0.1")]
+	private float m_maxHeading;
+	[Attribute("-180", UIWidgets.Slider, "Minimum elevation", "-180 0 0.1")]
+	private float m_minElevation;
+	[Attribute("180", UIWidgets.Slider, "Maximum elevation", "0 180 0.1")]
+	private float m_maxElevation;
+	
 	private float m_directionHeading;
 	private float m_directionElevation;
 	
@@ -36,18 +50,32 @@ class NYAN_LaunchPodController: ScriptComponent {
 			return;
 		}
 		
-		float dx = Math.Clamp(m_directionHeading - m_rtHeading, -10, 10);
-		float dy = Math.Clamp(m_directionElevation - m_rtElevation, -10, 10);
+		float dx = Math.Clamp(m_directionHeading - m_rtHeading, 
+			-m_headingTraverseSpeed * timeSlice, m_headingTraverseSpeed * timeSlice);
+		float dy = Math.Clamp(m_directionElevation - m_rtElevation, 
+			-m_elevationTraverseSpeed * timeSlice, m_elevationTraverseSpeed * timeSlice);
 		
-		m_rtHeading += timeSlice * dx;	
-		m_rtElevation += timeSlice * dy;
+		m_rtHeading += dx;	
+		m_rtElevation += dy;
 
 		m_signalsComponent.SetSignalValue(m_signalAimTurnTurret, m_rtHeading);
 		m_signalsComponent.SetSignalValue(m_signalAimElevationTurret, m_rtElevation);
 	}
 	
+	void GetTargetAngles(notnull out array<float> values) {
+		values.Insert(m_directionHeading);
+		values.Insert(m_directionElevation);
+	}
+	
+	void GetTargetingLimits(notnull out array<float> values) {
+		values.Insert(m_minHeading);
+		values.Insert(m_maxHeading);
+		values.Insert(m_minElevation);
+		values.Insert(m_maxElevation);
+	}
+	
 	void SetTargetHeadingElevation(float heading, float elevation) {
-		m_directionHeading = heading;
-		m_directionElevation = elevation;
+		m_directionHeading = Math.Clamp(heading, m_minHeading, m_maxHeading);
+		m_directionElevation = Math.Clamp(elevation, m_minElevation, m_maxElevation);
 	}
 };
