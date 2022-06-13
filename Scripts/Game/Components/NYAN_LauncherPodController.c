@@ -15,6 +15,9 @@ class NYAN_LaunchPodController: ScriptComponent {
 	[Attribute("180", UIWidgets.Slider, "Maximum elevation", "0 180 0.1")]
 	private float m_maxElevation;
 	
+	[Attribute("", UIWidgets.Object, "Remote", "")]
+	private IEntity m_remoteTurret;
+	
 	private float m_directionHeading;
 	private float m_directionElevation;
 	

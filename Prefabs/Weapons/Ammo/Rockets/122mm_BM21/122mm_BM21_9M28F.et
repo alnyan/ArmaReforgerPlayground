@@ -9,33 +9,33 @@ GenericEntity : "{3619812B192CCAE9}Prefabs/Props/Core/Wreck_Base.et" {
      SoundEvent "SOUND_EXPLOSION"
     }
    }
-   ArmingTime 0.5
+   ArmingTime 0
+   SafetyDistance 10
   }
   MeshObject "{5872F0EB7FA40561}" {
    Object "{91BDA44FDDF58B6E}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28F.xob"
   }
   MissileMoveComponent "{5986C301A9D8DAB3}" {
-   InitSpeed 120
-   Mass 120
+   InitSpeed 30
+   Mass 56
    TimeToLive 60
    DeleteWhenStop 0
-   TriggerWhenStop 0
    LayerPreset "Projectile"
    ThrustTime 1
-   ThrustForce 80
+   ThrustForce 10000
    ForwardAirFriction 0.05
-   SideAirFriction 0.1
+   SideAirFriction 10
    AlignTorque 0.4
   }
   RigidBody "{5872F0EB7DFB5A9D}" {
    LayerPreset "Projectile"
-   Active Active
    Mass 120
-   ResponseIndex "HugeDestructible"
+   ResponseIndex "HugeMomentum"
    Static 0
+   CCDRadius 0
   }
-  RocketTraceEffectComponent "{59894DDBE4C95806}" {
-   ParticleEffect "{D9E301D28125234A}Particles/Weapon/Smoke_grenade_AN-M8_HC.ptc"
+  RocketTraceEffectComponent "{5996F23E6660DBA7}" {
+   ParticleEffect "{D70C8A1F861E96C5}Particles/Weapon/Smoke_FlareIR.ptc"
   }
   RplComponent "{598941022965C6AA}" {
   }

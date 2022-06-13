@@ -37,13 +37,60 @@ FrameWidgetClass {
        }
        Text "Heading"
       }
-      EditBoxWidgetClass "{599563083CEA970D}" {
-       Name "HeadingEditBox"
-       Slot LayoutSlot "{599563083CEA972C}" {
-        Padding 16 8 16 0
+      HorizontalLayoutWidgetClass "{59969EC47D7143CF}" {
+       Name "HeadingGroup"
+       Slot LayoutSlot "{59969EC47D7143E9}" {
+        Padding 12 8 12 0
        }
-       text "0"
-       "Horizontal alignment" Center
+       {
+        TextWidgetClass "{59969EC41AC14318}" {
+         Name "MinHeadingText"
+         Slot LayoutSlot "{59969EC41AC1433D}" {
+         }
+         Text "-180"
+         "Font Size" 16
+         "Min Font Size" 16
+         "Vertical Alignment" Center
+        }
+        SliderWidgetClass "{59969EC42664860E}" {
+         Name "HeadingSlider"
+         Slot LayoutSlot "{59969EC4266485B0}" {
+          Padding 4 0 0 0
+         }
+         components {
+          SCR_SliderComponent "{59969EC5923EDCCD}" {
+           m_sLabel "Heading"
+           m_fValue 1
+           m_fStep 0.1
+          }
+         }
+         style Editor
+         Size 200 32
+         maximum 1
+         step 0.1
+         current 1
+        }
+        TextWidgetClass "{59969EC42463DADD}" {
+         Name "MaxHeadingText"
+         Slot LayoutSlot "{59969EC42463DAFB}" {
+          Padding 4 0 0 0
+         }
+         Text "+180"
+         "Font Size" 16
+         "Min Font Size" 16
+         "Vertical Alignment" Center
+        }
+        EditBoxWidgetClass "{599563083CEA970D}" {
+         Name "HeadingEditBox"
+         Slot LayoutSlot "{599563083CEA972C}" {
+          Padding 4 0 0 0
+          SizeMode Fill
+         }
+         style Editor
+         text "0"
+         "Horizontal alignment" Center
+        }
+       }
       }
       TextWidgetClass "{59956308C8313DB1}" {
        Name "ElevationLabel"
@@ -52,13 +99,60 @@ FrameWidgetClass {
        }
        Text "Elevation"
       }
-      EditBoxWidgetClass "{5995630839799D11}" {
-       Name "ElevationEditBox"
-       Slot LayoutSlot "{5995630839799D33}" {
-        Padding 16 8 16 0
+      HorizontalLayoutWidgetClass "{59969EC58E468A7B}" {
+       Name "ElevationGroup"
+       Slot LayoutSlot "{59969EC58E468A9B}" {
+        Padding 12 8 12 0
        }
-       text "0"
-       "Horizontal alignment" Center
+       {
+        TextWidgetClass "{59969EC5A9780DD0}" {
+         Name "MinElevationText"
+         Slot LayoutSlot "{59969EC5A9780DFF}" {
+         }
+         Text "-180"
+         "Font Size" 16
+         "Min Font Size" 16
+         "Vertical Alignment" Center
+        }
+        SliderWidgetClass "{59969EC5AB385EDC}" {
+         Name "ElevationSlider"
+         Slot LayoutSlot "{59969EC5AB385EFF}" {
+          Padding 4 0 0 0
+         }
+         components {
+          SCR_SliderComponent "{59969EC569B25DF1}" {
+           m_sLabel "Elevation"
+           m_fValue 1
+           m_fStep 0.1
+          }
+         }
+         style Editor
+         Size 200 32
+         maximum 1
+         step 0.1
+         current 1
+        }
+        TextWidgetClass "{59969EC55448E3F4}" {
+         Name "MaxElevationText"
+         Slot LayoutSlot "{59969EC55448E209}" {
+          Padding 4 0 0 0
+         }
+         Text "+180"
+         "Font Size" 16
+         "Min Font Size" 16
+         "Vertical Alignment" Center
+        }
+        EditBoxWidgetClass "{5995630839799D11}" {
+         Name "ElevationEditBox"
+         Slot LayoutSlot "{5995630839799D33}" {
+          Padding 4 0 0 0
+          SizeMode Fill
+         }
+         style Editor
+         text "0"
+         "Horizontal alignment" Center
+        }
+       }
       }
       ButtonWidgetClass "{59956308F8A498C0}" {
        Name "ApplyButton"
@@ -71,6 +165,7 @@ FrameWidgetClass {
          m_sText "Apply"
         }
        }
+       style Editor
        {
         TextWidgetClass "{59957768938AB7DA}" {
          Name "ApplyButtonText"

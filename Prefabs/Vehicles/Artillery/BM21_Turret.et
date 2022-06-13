@@ -7,12 +7,19 @@ GenericEntity {
    Object "{08C82297260D8E74}Assets/Vehicles/Artillery/BM21/BM21_Turret.xob"
   }
   NYAN_LaunchPodController "{599346CDCF2DF284}" {
-   m_directionAzimuth 0
-   m_directionElevation 0
+   m_headingTraverseSpeed 7
+   m_elevationTraverseSpeed 5
+   m_minHeading -102
+   m_maxHeading 70
+   m_minElevation 0
+   m_maxElevation 55
   }
   RigidBody "{599346D79E449D42}" {
    LayerPreset "Interaction"
-   ResponseIndex "Normal"
+   Active Active
+   Mass 500
+   CenterOfMass 0 1 0
+   ResponseIndex "HugeDestructible"
    ModelGeometry 1
    Static 0
   }
@@ -21,25 +28,241 @@ GenericEntity {
     EntitySlotInfo Rocket0 {
      PivotID "SOCKET_Tube0"
      ChildPivotID "SOCKET_Mount"
-     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
      ActivatePhysicsOnDetaching 1
     }
     EntitySlotInfo Rocket1 {
      PivotID "SOCKET_Tube1"
      ChildPivotID "SOCKET_Mount"
-     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
      ActivatePhysicsOnDetaching 1
     }
     EntitySlotInfo Rocket2 {
      PivotID "SOCKET_Tube2"
      ChildPivotID "SOCKET_Mount"
-     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
      ActivatePhysicsOnDetaching 1
     }
     EntitySlotInfo Rocket3 {
      PivotID "SOCKET_Tube3"
      ChildPivotID "SOCKET_Mount"
-     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/Rocket.et"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket4 {
+     PivotID "SOCKET_Tube4"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket5 {
+     PivotID "SOCKET_Tube5"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket6 {
+     PivotID "SOCKET_Tube6"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket7 {
+     PivotID "SOCKET_Tube7"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket8 {
+     PivotID "SOCKET_Tube8"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket9 {
+     PivotID "SOCKET_Tube9"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket10 {
+     PivotID "SOCKET_Tube10"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket11 {
+     PivotID "SOCKET_Tube11"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket12 {
+     PivotID "SOCKET_Tube12"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket13 {
+     PivotID "SOCKET_Tube13"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket14 {
+     PivotID "SOCKET_Tube14"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket15 {
+     PivotID "SOCKET_Tube15"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket16 {
+     PivotID "SOCKET_Tube16"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket17 {
+     PivotID "SOCKET_Tube17"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket18 {
+     PivotID "SOCKET_Tube18"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket19 {
+     PivotID "SOCKET_Tube19"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket20 {
+     PivotID "SOCKET_Tube20"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket21 {
+     PivotID "SOCKET_Tube21"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket22 {
+     PivotID "SOCKET_Tube22"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket23 {
+     PivotID "SOCKET_Tube23"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket24 {
+     PivotID "SOCKET_Tube24"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket25 {
+     PivotID "SOCKET_Tube25"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket26 {
+     PivotID "SOCKET_Tube26"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket27 {
+     PivotID "SOCKET_Tube27"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket28 {
+     PivotID "SOCKET_Tube28"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket29 {
+     PivotID "SOCKET_Tube29"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket30 {
+     PivotID "SOCKET_Tube30"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket31 {
+     PivotID "SOCKET_Tube31"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket32 {
+     PivotID "SOCKET_Tube32"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket33 {
+     PivotID "SOCKET_Tube33"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket34 {
+     PivotID "SOCKET_Tube34"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket35 {
+     PivotID "SOCKET_Tube35"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket36 {
+     PivotID "SOCKET_Tube36"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket37 {
+     PivotID "SOCKET_Tube37"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket38 {
+     PivotID "SOCKET_Tube38"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+     ActivatePhysicsOnDetaching 1
+    }
+    EntitySlotInfo Rocket39 {
+     PivotID "SOCKET_Tube39"
+     ChildPivotID "SOCKET_Mount"
+     Prefab "{4FBD56002AD027D3}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
      ActivatePhysicsOnDetaching 1
     }
    }
@@ -83,6 +306,8 @@ GenericEntity {
    }
   }
   RplComponent "{599346D79E449DFB}" {
+  }
+  Hierarchy "{599B066B4443FEE2}" {
   }
  }
  coords 0 0 0

@@ -9,12 +9,14 @@ class NYAN_MissileLaunchAction : ScriptedUserAction
 		}
 		
 		SlotManagerComponent slotManager = SlotManagerComponent.Cast(mSlotManager);
+		
 		if (!slotManager) {
 			return;
 		}
 		
 		array<EntitySlotInfo> res = {};
-		vector mat[4];
+		vector rocketTransform[4];
+		
 		int count = slotManager.GetSlotInfos(res);
 		
 		for (int i = 0; i < count; ++i) {
@@ -27,9 +29,10 @@ class NYAN_MissileLaunchAction : ScriptedUserAction
 			}
 			
 			res[i].DetachEntity(false);
-			rocket.GetWorldTransform(mat);
+			rocket.GetWorldTransform(rocketTransform);
 			pOwnerEntity.RemoveChild(rocket);
-			LaunchRocket(rocket, mat, pOwnerEntity);
+			ApplyRecoil(pOwnerEntity, rocketTransform, 2500);
+			LaunchRocket(rocket, rocketTransform, pOwnerEntity);
 			return;
 		}
 		
@@ -45,6 +48,20 @@ class NYAN_MissileLaunchAction : ScriptedUserAction
 	override bool CanBePerformedScript(IEntity user)
 	{
 		return true;
+	}
+	
+	private void ApplyRecoil(IEntity turret, vector rocketTransform[4], float amount) {
+		IEntity target = turret.GetParent();
+		if (!target) {
+			target = turret;
+		}
+		vector rocketPosition = "0 0 0";
+		rocketPosition = rocketPosition.Multiply4(rocketTransform);
+		vector impulseVector = "0 0 -1";
+		impulseVector = impulseVector.Multiply4(rocketTransform);
+		impulseVector = (impulseVector - rocketPosition).Normalized() * amount;
+		
+		target.GetPhysics().ApplyImpulseAt(rocketPosition, impulseVector);
 	}
 	
 	private void LaunchRocket(IEntity rocket, vector mat[4], IEntity launcher)

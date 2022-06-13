@@ -4,9 +4,17 @@ modded enum ChimeraMenuPreset {
 
 class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 	private NYAN_LaunchPodController m_launcherPodController;
+	
 	private SCR_ButtonTextComponent mApplyButton;
 	private EditBoxWidget mHeadingEditBox;
 	private EditBoxWidget mElevationEditBox;
+	private TextWidget mMinHeadingText;
+	private TextWidget mMaxHeadingText;
+	private TextWidget mMinElevationText;
+	private TextWidget mMaxElevationText;
+	private SliderWidget mHeadingSlider;
+	private SliderWidget mElevationSlider;
+	
 	private ref array<float> mTargetingLimits;
 	
 	override void OnMenuOpen() {
@@ -15,9 +23,15 @@ class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 		mTargetingLimits = new array<float>;
 		
 		mApplyButton = SCR_ButtonTextComponent.GetButtonText("ApplyButton", root);
-		mHeadingEditBox = EditBoxWidget.Cast(root.FindWidget("MainPanel.MainLayout.HeadingEditBox"));
-		mElevationEditBox = EditBoxWidget.Cast(root.FindWidget("MainPanel.MainLayout.ElevationEditBox"));
-		
+		mHeadingEditBox = EditBoxWidget.Cast(root.FindWidget("MainPanel.MainLayout.HeadingGroup.HeadingEditBox"));
+		mElevationEditBox = EditBoxWidget.Cast(root.FindWidget("MainPanel.MainLayout.ElevationGroup.ElevationEditBox"));
+		mMinHeadingText = TextWidget.Cast(root.FindWidget("MainPanel.MainLayout.HeadingGroup.MinHeadingText"));
+		mMaxHeadingText = TextWidget.Cast(root.FindWidget("MainPanel.MainLayout.HeadingGroup.MaxHeadingText"));
+		mMinElevationText = TextWidget.Cast(root.FindWidget("MainPanel.MainLayout.ElevationGroup.MinElevationText"));
+		mMaxElevationText = TextWidget.Cast(root.FindWidget("MainPanel.MainLayout.ElevationGroup.MaxElevationText"));
+		mHeadingSlider = SliderWidget.Cast(root.FindWidget("MainPanel.MainLayout.HeadingGroup.HeadingSlider"));
+		mElevationSlider = SliderWidget.Cast(root.FindWidget("MainPanel.MainLayout.ElevationGroup.ElevationSlider"));
+
 		if (mApplyButton) {
 			mApplyButton.m_OnClicked.Insert(OnApplyButtonClicked);
 		}
@@ -32,13 +46,30 @@ class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 		
 		m_launcherPodController.GetTargetingLimits(mTargetingLimits);
 		
-		if (!mHeadingEditBox || !mElevationEditBox) {
+		if (!mHeadingEditBox || 
+			!mElevationEditBox || 
+			!mMinHeadingText || 
+			!mMaxHeadingText ||
+			!mMinElevationText ||
+			!mMaxElevationText ||
+			!mHeadingSlider ||
+			!mElevationSlider) {
 			return;
 		}
+		
+		mMinHeadingText.SetText(mTargetingLimits[0].ToString());
+		mMaxHeadingText.SetText("+" + mTargetingLimits[1].ToString());
+		mMinElevationText.SetText(mTargetingLimits[2].ToString());
+		mMaxElevationText.SetText("+" + mTargetingLimits[3].ToString());
+		mHeadingSlider.SetRange(mTargetingLimits[0], mTargetingLimits[1]);
+		mElevationSlider.SetRange(mTargetingLimits[2], mTargetingLimits[3]);
+		
 		auto current = new array<float>;
 		m_launcherPodController.GetTargetAngles(current);
 		mHeadingEditBox.SetText(current[0].ToString());
 		mElevationEditBox.SetText(current[1].ToString());
+		mHeadingSlider.SetCurrent(current[0]);
+		mElevationSlider.SetCurrent(current[1]);
 	}
 	
 	private void OnApplyButtonClicked() {
