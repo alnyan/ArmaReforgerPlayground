@@ -1,84 +1,75 @@
-class NYAN_LaunchPodControllerClass: ScriptComponentClass {};
+[ComponentEditorProps(description: "Component for remote control of launcher turrets", color: "0 0 255 255")]
+class NYAN_LauncherPodControllerClass: ScriptComponentClass {};
 
-class NYAN_LaunchPodController: ScriptComponent {
-	[Attribute("10", UIWidgets.Slider, "Heading traverse speed (deg/s)", "0 180 1")]
-	private float m_headingTraverseSpeed;
-	[Attribute("10", UIWidgets.Slider, "Elevation traverse speed (deg/s)", "0 180 1")]
-	private float m_elevationTraverseSpeed;
+class NYAN_LauncherPodController: ScriptComponent {
+	[Attribute("0", UIWidgets.CheckBox, "Is remote (attached to the same parent)")]
+	private bool mIsRemote;
 	
-	[Attribute("-180", UIWidgets.Slider, "Minimum heading", "-180 0 0.1")]
-	private float m_minHeading;
-	[Attribute("180", UIWidgets.Slider, "Maximum heading", "0 180 0.1")]
-	private float m_maxHeading;
-	[Attribute("-180", UIWidgets.Slider, "Minimum elevation", "-180 0 0.1")]
-	private float m_minElevation;
-	[Attribute("180", UIWidgets.Slider, "Maximum elevation", "0 180 0.1")]
-	private float m_maxElevation;
-	
-	[Attribute("", UIWidgets.Object, "Remote", "")]
-	private IEntity m_remoteTurret;
-	
-	private float m_directionHeading;
-	private float m_directionElevation;
-	
-	private float m_rtHeading, m_rtElevation;
-	
-	private ProcAnimComponent m_animComponent;
-	private SignalsManagerComponent m_signalsComponent;
-	
-	private int m_signalAimTurnTurret;
-	private int m_signalAimElevationTurret;
+	private IEntity mTurretEntity;
+	private NYAN_LauncherPodComponent mLauncherPodComponent;
 	
 	override protected void EOnInit(IEntity owner) {
-		m_animComponent = ProcAnimComponent.Cast(owner.FindComponent(ProcAnimComponent));
-		m_signalsComponent = SignalsManagerComponent.Cast(owner.FindComponent(SignalsManagerComponent));
-												
-		if (!m_animComponent || !m_signalsComponent) {
+		if (!mIsRemote) {
+			auto podController = NYAN_LauncherPodComponent.Cast(owner.FindComponent(NYAN_LauncherPodComponent));
+			if (!podController) {
+				Print("Invalid turret components: missing NYAN_LauncherPodComponent");
+				return;
+			}
+			
+			mTurretEntity = owner;
+			mLauncherPodComponent = podController;
 			return;
 		}
 		
-		m_signalAimTurnTurret = m_animComponent.GetSignalIndex(0, "AimTurnTurret");
-		m_signalAimElevationTurret = m_animComponent.GetSignalIndex(0, "AimElevationTurret");
+		auto parent = owner.GetParent();
+		if (!parent) {
+			Print("Invalid remote/turret hierachy: remote is not attached to a parent");
+			return;
+		}
+		auto slotManager = SlotManagerComponent.Cast(parent.FindComponent(SlotManagerComponent));
+		if (!slotManager) {
+			Print("Invalid remote/turret hierarchy: remote's parent doesn't have a slot manager");
+			return;
+		}
+		
+		array<EntitySlotInfo> res = {};
+		int count = slotManager.GetSlotInfos(res);
+		
+		for (int i = 0; i < count; ++i) {
+			if (!res[i]) {
+				continue;
+			}
+			IEntity turret = res[i].GetAttachedEntity();
+			if (!turret) {
+				continue;
+			}
+			
+			auto podController = NYAN_LauncherPodComponent.Cast(turret.FindComponent(NYAN_LauncherPodComponent));
+			if (!podController) {
+				continue;
+			}
+			
+			mTurretEntity = turret;
+			mLauncherPodComponent = podController;
+			return;
+		}
+		
+		Print("Invalid remote/turret hierarchy: no turret found in parent");
 	}
 	
 	override protected void OnPostInit(IEntity owner) 
 	{		
 	    super.OnPostInit(owner);
-		owner.SetFlags(EntityFlags.ACTIVE, false);
-		SetEventMask(owner, EntityEvent.INIT | EntityEvent.FRAME);
+		SetEventMask(owner, EntityEvent.INIT);
 	}
 	
-	override protected void EOnFrame(IEntity owner, float timeSlice) {
-		if (!m_signalsComponent) {
-			return;
+	NYAN_LauncherPodComponent GetLauncherComponent() {
+		return mLauncherPodComponent;
+	}
+	
+	void Launch() {
+		if (mLauncherPodComponent && mTurretEntity) {
+			mLauncherPodComponent.Launch(mTurretEntity);
 		}
-		
-		float dx = Math.Clamp(m_directionHeading - m_rtHeading, 
-			-m_headingTraverseSpeed * timeSlice, m_headingTraverseSpeed * timeSlice);
-		float dy = Math.Clamp(m_directionElevation - m_rtElevation, 
-			-m_elevationTraverseSpeed * timeSlice, m_elevationTraverseSpeed * timeSlice);
-		
-		m_rtHeading += dx;	
-		m_rtElevation += dy;
-
-		m_signalsComponent.SetSignalValue(m_signalAimTurnTurret, m_rtHeading);
-		m_signalsComponent.SetSignalValue(m_signalAimElevationTurret, m_rtElevation);
 	}
-	
-	void GetTargetAngles(notnull out array<float> values) {
-		values.Insert(m_directionHeading);
-		values.Insert(m_directionElevation);
-	}
-	
-	void GetTargetingLimits(notnull out array<float> values) {
-		values.Insert(m_minHeading);
-		values.Insert(m_maxHeading);
-		values.Insert(m_minElevation);
-		values.Insert(m_maxElevation);
-	}
-	
-	void SetTargetHeadingElevation(float heading, float elevation) {
-		m_directionHeading = Math.Clamp(heading, m_minHeading, m_maxHeading);
-		m_directionElevation = Math.Clamp(elevation, m_minElevation, m_maxElevation);
-	}
-};
+}

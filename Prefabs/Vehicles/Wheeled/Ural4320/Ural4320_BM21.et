@@ -897,6 +897,11 @@ Vehicle : "{E03D5609EEA6E03D}Prefabs/Vehicles/Core/Wheeled_Truck_Base.et" {
      Offset 0 2.0103 -1.8853
      Prefab "{37AB72E3F5D41EAB}Prefabs/Vehicles/Artillery/BM21_Turret.et"
     }
+    EntitySlotInfo BM21_Radio {
+     Offset 0.4331 1.8779 1.8127
+     Angles -180 0 -180
+     Prefab "{DEF0C75E99C1A668}Prefabs/Props/Military/Radios/RadioStation_R123M_01_BM21_FCS.et"
+    }
    }
    SlotMappers {
     CompartmentToSlotMapping Window_01 {
@@ -960,6 +965,13 @@ Vehicle : "{E03D5609EEA6E03D}Prefabs/Vehicles/Core/Wheeled_Truck_Base.et" {
      Coverage 0.05
      Compartments {
       "PilotCompartment" "Passenger_r01" "Passenger_m01"
+     }
+    }
+    CompartmentToSlotMapping BM21_Radio {
+     SlotName "BM21_Radio"
+     Coverage 0.05
+     Compartments {
+      "Passenger_r01" "Passenger_m01"
      }
     }
    }

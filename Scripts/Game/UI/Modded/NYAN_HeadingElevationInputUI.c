@@ -3,7 +3,7 @@ modded enum ChimeraMenuPreset {
 }
 
 class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
-	private NYAN_LaunchPodController m_launcherPodController;
+	private NYAN_LauncherPodComponent mLauncherPodComponent;
 	
 	private SCR_ButtonTextComponent mApplyButton;
 	private EditBoxWidget mHeadingEditBox;
@@ -37,14 +37,10 @@ class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 		}
 	}
 	
-	void SetLauncherEntity(IEntity launcher) {
-		m_launcherPodController = NYAN_LaunchPodController.Cast(launcher.FindComponent(NYAN_LaunchPodController));
+	void SetLauncherComponent(notnull NYAN_LauncherPodComponent launcherComponent) {
+		mLauncherPodComponent = launcherComponent;
 		
-		if (!m_launcherPodController) {
-			return;
-		}
-		
-		m_launcherPodController.GetTargetingLimits(mTargetingLimits);
+		mLauncherPodComponent.GetTargetingLimits(mTargetingLimits);
 		
 		if (!mHeadingEditBox || 
 			!mElevationEditBox || 
@@ -65,7 +61,7 @@ class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 		mElevationSlider.SetRange(mTargetingLimits[2], mTargetingLimits[3]);
 		
 		auto current = new array<float>;
-		m_launcherPodController.GetTargetAngles(current);
+		mLauncherPodComponent.GetTargetAngles(current);
 		mHeadingEditBox.SetText(current[0].ToString());
 		mElevationEditBox.SetText(current[1].ToString());
 		mHeadingSlider.SetCurrent(current[0]);
@@ -73,7 +69,7 @@ class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 	}
 	
 	private void OnApplyButtonClicked() {
-		if (!mHeadingEditBox || !mElevationEditBox || !m_launcherPodController) {
+		if (!mHeadingEditBox || !mElevationEditBox || !mLauncherPodComponent) {
 			return;
 		}
 		
@@ -89,7 +85,7 @@ class NYAN_HeadingElevationInputUI: ChimeraMenuBase {
 		}
 				
 		PrintFormat("Applying heading (%1) and elevation (%2)", heading, elevation);
-		m_launcherPodController.SetTargetHeadingElevation(heading, elevation);
+		mLauncherPodComponent.SetTargetHeadingElevation(heading, elevation);
 		
 		Close();
 	}

@@ -6,13 +6,19 @@ GenericEntity {
   MeshObject "{599346D79E449D07}" {
    Object "{08C82297260D8E74}Assets/Vehicles/Artillery/BM21/BM21_Turret.xob"
   }
-  NYAN_LaunchPodController "{599346CDCF2DF284}" {
+  Hierarchy "{599B066B4443FEE2}" {
+  }
+  NYAN_LauncherPodComponent "{599D0BA7C1961352}" {
    m_headingTraverseSpeed 7
    m_elevationTraverseSpeed 5
    m_minHeading -102
    m_maxHeading 70
    m_minElevation 0
-   m_maxElevation 55
+   m_maxElevation 180
+   m_deadZoneLeft -34
+   m_deadZoneRight 34
+  }
+  NYAN_LauncherPodController "{599D0BA7891DE439}" {
   }
   RigidBody "{599346D79E449D42}" {
    LayerPreset "Interaction"
@@ -306,8 +312,6 @@ GenericEntity {
    }
   }
   RplComponent "{599346D79E449DFB}" {
-  }
-  Hierarchy "{599B066B4443FEE2}" {
   }
  }
  coords 0 0 0

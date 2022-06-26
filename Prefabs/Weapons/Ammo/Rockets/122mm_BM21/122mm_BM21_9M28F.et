@@ -1,43 +1,66 @@
-GenericEntity : "{3619812B192CCAE9}Prefabs/Props/Core/Wreck_Base.et" {
- ID "F0DBA538AC2A0552"
+Projectile : "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et" {
+ ID "DA5C6308000CDEF2"
  components {
-  CollisionTriggerComponent "{598968CB67662471}" {
+  CollisionTriggerComponent "{529E88841E9ED863}" {
+   Enabled 0
    PROJECTILE_EFFECTS {
-    ExplosionEffect "{598968CB62373A5B}" {
+    ExplosionEffect "{529E88841E9ED86F}" {
+     EffectPrefab "{5352EC89ADB42AB1}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_BM21.et"
+     ParticleEffect ""
+    }
+   }
+  }
+  InventoryItemComponent "{526E87778842822F}" {
+   Enabled 0
+  }
+  MagazineComponent "{50F6614BB5D5B0A8}" {
+   Enabled 0
+  }
+  MissileMoveComponent "{0EF36690881261EF}" {
+   InitSpeed 20
+   Mass 56
+   TimeToLive 120
+   ThrustTime 2.8
+   ThrustForce 100
+   ForwardAirFriction 0.273
+   SideAirFriction 0
+   AlignTorque 1
+   DistanceEnableGravitation 0
+  }
+  NYAN_AltitudeTriggerComponent "{59ACD865AF56DC3B}" {
+   Enabled 1
+   m_submunitionPrefab "{7D9ED1888682F543}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28K_Submunition.et"
+   m_submunitionCount 30
+   m_triggerAltitude 50
+   m_explosionPrefab "{732748F724D4954E}Prefabs/Weapons/Warheads/Warhead_122mm_BM21_9M28K.et.et"
+  }
+  ProximityTriggerComponent "{59AB468249BE93B4}" {
+   Enabled 0
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59AB4683964E8AEE}" {
      EffectPrefab "{347C26EF0DF9B805}Prefabs/Weapons/Warheads/Warhead_122mm_BM21_9M28F.et"
      ParticleEffect "{F70E177B46DC4D9E}Particles/Weapon/Explosion_9M22F.ptc"
      SoundEvent "SOUND_EXPLOSION"
     }
    }
-   ArmingTime 0
+   ArmingTime 1
    SafetyDistance 10
+   DISTANCE 0.01
   }
-  MeshObject "{5872F0EB7FA40561}" {
-   Object "{91BDA44FDDF58B6E}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28F.xob"
+  RocketTraceEffectComponent "{54A0E2DA2D342A38}" {
+   ParticleEffect "{F9D8383CC3FD7ECA}Particles/Weapon/Smoke_grenade_RDG-2.ptc"
   }
-  MissileMoveComponent "{5986C301A9D8DAB3}" {
-   InitSpeed 30
-   Mass 56
-   TimeToLive 60
-   DeleteWhenStop 0
-   LayerPreset "Projectile"
-   ThrustTime 1
-   ThrustForce 10000
-   ForwardAirFriction 0.05
-   SideAirFriction 10
-   AlignTorque 0.4
+  SimpleSoundComponent "{5722A8D545593AE0}" {
+   Enabled 1
+   Filenames {
+    "{6FC67D2C9BF229AB}Sounds/Weapons/Ammo/RPG7/Explosion/Ammo_Rocket_RPG7.acp"
+   }
   }
-  RigidBody "{5872F0EB7DFB5A9D}" {
-   LayerPreset "Projectile"
-   Mass 120
-   ResponseIndex "HugeMomentum"
-   Static 0
-   CCDRadius 0
-  }
-  RocketTraceEffectComponent "{5996F23E6660DBA7}" {
-   ParticleEffect "{D70C8A1F861E96C5}Particles/Weapon/Smoke_FlareIR.ptc"
-  }
-  RplComponent "{598941022965C6AA}" {
+  ActionsManagerComponent "{50F6614BA1D6E54A}" {
+   Enabled 0
   }
  }
+ coords 0 0 0
+ ProjectileModel "{91BDA44FDDF58B6E}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28F.xob"
+ CartridgeModel "{91BDA44FDDF58B6E}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28F.xob"
 }

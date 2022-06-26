@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{A2ABC9CFE9F45F69}Prefabs/Weapons/Ammo/Rockets/122mm_BM21/122mm_BM21_9M28F.et"
+ Name "{DEF0C75E99C1A668}Prefabs/Props/Military/Radios/RadioStation_R123M_01_BM21_FCS.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

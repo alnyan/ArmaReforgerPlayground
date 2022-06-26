@@ -1,0 +1,24 @@
+GenericEntity {
+ ID "59B35418B330130E"
+ components {
+  SignalsManagerComponent "{59AEECA37C7196BD}" {
+  }
+  BaseTriggerComponent "{59AEECA3529E37AF}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59AEECA35D1273A3}" {
+     EffectPrefab "{F8DFA475BC5A3B7C}Prefabs/Weapons/Warheads/Warhead_Grenade_RGD5.et"
+     ParticleEffect "{728768DE31C8D1DE}Particles/Weapon/Explosion_VOG25.ptc"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   TRIGGER_ALIVE 0
+  }
+  Hierarchy "{59AEECA29C199659}" {
+  }
+  SCR_InstantTriggerComponent "{59B37ADC041966EB}" {
+  }
+  RplComponent "{59AEECA34E683609}" {
+  }
+ }
+ coords 19.3 2.749 33.17
+}

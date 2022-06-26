@@ -5,9 +5,9 @@ MetaFileClass {
    ExportSkinning 1
    ExportSceneHierarchy 1
    MaterialAssigns {
-    MaterialAssignClass "{5995776A350ED6B5}" {
-     SourceMaterial "DefaultGeneratedMaterial"
-     AssignedMaterial "{16B226AC3C14ABC7}Assets/Vehicles/Artillery/BM21/data/DefaultGeneratedMaterial.emat"
+    MaterialAssignClass "{59A6F417F8AFEC07}" {
+     SourceMaterial "BM21_Metal_Base"
+     AssignedMaterial "{9633115D57345673}Assets/Vehicles/Artillery/BM21/data/BM21_Metal_Base.emat"
     }
    }
    GeometryParams {

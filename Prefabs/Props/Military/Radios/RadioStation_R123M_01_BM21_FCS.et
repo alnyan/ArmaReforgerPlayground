@@ -1,0 +1,36 @@
+GenericEntity : "{03B44EA7652D0D17}Prefabs/Props/Military/Radios/RadioStation_R123M_01.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  NYAN_LauncherPodController "{599D0BA72CCE05DD}" {
+   mIsRemote 1
+  }
+  ActionsManagerComponent "{599D0BA0D034E956}" {
+   ActionContexts {
+    UserActionContext "{599D0BA0D14FD1A9}" {
+     UIInfo UIInfo "{599D0BA0DC0F6F7A}" {
+      Name "default"
+     }
+     ContextName "default"
+     Position PointInfo "{599D0BA0C41F0034}" {
+     }
+    }
+   }
+   additionalActions {
+    NYAN_InputHeadingElevationAction "{599D0BA0C3AFC4BA}" {
+     ParentContextList {
+      ""
+     }
+     UIInfo UIInfo "{599D0BA0CB3E6F3E}" {
+     }
+    }
+    NYAN_MissileLaunchAction "{599D0BA0CF3017C3}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{599D0BA0F7BF997D}" {
+     }
+    }
+   }
+  }
+ }
+}

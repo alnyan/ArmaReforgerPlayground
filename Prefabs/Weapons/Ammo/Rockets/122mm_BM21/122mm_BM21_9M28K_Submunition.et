@@ -1,0 +1,34 @@
+Projectile : "{E6EC1F21E22709F0}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM_Penetrator.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  CollisionTriggerComponent "{59ACD86F60D29858}" {
+   Enabled 1
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59ACD86940DDE6FC}" {
+     EffectPrefab "{F8DFA475BC5A3B7C}Prefabs/Weapons/Warheads/Warhead_Grenade_RGD5.et"
+     ParticleEffect "{5592BC9B67C60D16}Particles/Weapon/Explosion_RGD5.ptc"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   TRIGGER_ALIVE 1
+   ArmingTime 0.2
+   SafetyDistance 3
+  }
+  InventoryItemComponent "{52627A13050713F1}" {
+   Enabled 0
+  }
+  MeshObject "{59ACD868CE861961}" {
+   Object "{6BF75DFD27B940E9}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28K_Submunition.xob"
+  }
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   Enabled 0
+   TimeToLive 10
+  }
+  RplComponent "{59ACD868E471CD5A}" {
+  }
+ }
+ coords 0 0 0
+ ProjectileVisibleTimeScale 2
+ ProjectileModel "{6BF75DFD27B940E9}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28K_Submunition.xob"
+ CartridgeModel "{6BF75DFD27B940E9}Assets/Weapons/Ammo/Rockets/122mm_BM21/9M28K_Submunition.xob"
+}
